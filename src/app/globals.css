@@ -29,3 +29,30 @@ a{
   justify-content: space-between;
 
 }
+@media (max-width: 1366px){
+    .container{
+      width: 1280px;
+    }
+}
+@media (max-width: 1280px){
+  .container{
+    width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 1024px){
+  .container{
+    width: 768px;
+  }
+}
+@media (max-width: 768px){
+  .container{
+    width: 640px;
+  }
+}
+@media (max-width: 640px){
+  .container{
+    width: 475px;
+  }
+}
