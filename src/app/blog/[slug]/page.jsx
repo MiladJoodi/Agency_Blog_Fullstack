@@ -6,19 +6,21 @@ const SinglePostPage = () => {
         <div className={styles.container}>
             <div className={styles.imgContainer}>
                 <Image src="https://images.pexels.com/photos/20412064/pexels-photo-20412064/free-photo-of-portofino.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=''
-                fill
-                className={styles.img}
+                    alt=''
+                    fill
+                    className={styles.img}
                 />
             </div>
 
             <div className={styles.textContainer}>
                 <h1 className={styles.title}>Title</h1>
                 <div className={styles.detail}>
-                    <Image 
-                    className={styles.avatar}
-                    alt=''
-                    fill
+                    <Image
+                        src="https://images.pexels.com/photos/20412064/pexels-photo-20412064/free-photo-of-portofino.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        className={styles.avatar}
+                        width={50}
+                        height={50}
+                        alt=''
                     />
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Author</span>
@@ -31,7 +33,7 @@ const SinglePostPage = () => {
                 </div>
                 {/* desc */}
                 <div className={styles.content}>
-                    
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, adipisci earum aspernatur omnis minima rem accusantium nisi labore voluptatem autem aliquid itaque nobis facere, consequuntur veritatis architecto molestias. Earum eligendi molestiae et necessitatibus facere nemo?
                 </div>
             </div>
         </div>
