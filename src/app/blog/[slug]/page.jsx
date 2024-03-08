@@ -18,17 +18,17 @@ const getData = async (slug) => {
 const SinglePostPage = async ({ params }) => {
 
     const { slug } = params;
-
+    // 
     const post = await getData(slug);
 
     return (
         <div className={styles.container}>
             <div className={styles.imgContainer}>
-                <Image src="https://images.pexels.com/photos/20412064/pexels-photo-20412064/free-photo-of-portofino.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=''
-                    fill
-                    className={styles.img}
-                />
+                    <Image src="https://images.pexels.com/photos/20509971/pexels-photo-20509971/free-photo-of-a-reflection-from-the-courtyard-of-zinciriye-medrese.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt=''
+                        fill
+                        className={styles.img}
+                    />
             </div>
 
             <div className={styles.textContainer}>
@@ -42,7 +42,7 @@ const SinglePostPage = async ({ params }) => {
                         alt=''
                     />
                     <Suspense fallback={<div><PostUserSkeleton /></div>}>
-                        <PostUser userId={post.userId} />
+                        <PostUser userId={post.id} />
                         {/* <PostUserSkeleton /> */}
                     </Suspense>
                     <div className={styles.detailText}>

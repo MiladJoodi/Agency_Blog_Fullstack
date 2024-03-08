@@ -12,6 +12,7 @@ const getData = async (userId) => {
 const PostUser = async ({userId}) => {
 
     const user = await getData(userId)
+    console.log(user)
 
     return (
         <div className={styles.container}>
