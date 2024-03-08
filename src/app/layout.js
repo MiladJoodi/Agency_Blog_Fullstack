@@ -6,11 +6,11 @@ import Footer from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title:{
-    default: "Next 14 HomePage",
-    template: "&s | Next 14"
+  title: {
+    default:"Next.js 14 Homepage",
+    template:"%s | Next.js 14"
   },
-  description: "Next.js Starter app description",
+  description: "Next.js starter app description",
 };
 
 export default function RootLayout({ children }) {
