@@ -36,10 +36,7 @@
 .detailValue{
     font-weight: 500;
 }
-.avatar{
-    object-fit: cover;
-    border-radius: 50%;
-}
+
 .content{
     font-size: 20px;
 }
