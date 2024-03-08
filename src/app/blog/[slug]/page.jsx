@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from './singlePost.module.css'
 import PostUser from '@/components/postUser/postUser';
+import { Suspense } from 'react';
+import PostUserSkeleton from '@/components/skeleton/postUserSkeleton';
 
 
 const getData = async (slug) => {
@@ -13,12 +15,12 @@ const getData = async (slug) => {
 }
 
 
-const SinglePostPage = async ({params}) => {
+const SinglePostPage = async ({ params }) => {
 
-    const {slug} = params;
+    const { slug } = params;
 
     const post = await getData(slug);
-    
+
     return (
         <div className={styles.container}>
             <div className={styles.imgContainer}>
@@ -39,7 +41,10 @@ const SinglePostPage = async ({params}) => {
                         height={50}
                         alt=''
                     />
-                    <PostUser userId = {post.userId} />
+                    <Suspense fallback={<div><PostUserSkeleton /></div>}>
+                        <PostUser userId={post.userId} />
+                        {/* <PostUserSkeleton /> */}
+                    </Suspense>
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Published</span>
                         <span className={styles.detailValue}>01.01.2024</span>
