@@ -57,5 +57,6 @@
     .boxes{
       flex-direction: column;
       gap: 50px;
+      text-align: center;
     }
   }

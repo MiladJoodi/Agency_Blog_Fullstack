@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './postCard.module.css'
 import Link from 'next/link';
 
-const PostCard = () => {
+const PostCard = ({post}) => {
     return (
         <div className={styles.container}>
             {/* Top */}
