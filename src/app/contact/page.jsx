@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./contact.module.css"
 
 export const metadata = {
-    title: "Create Next Contact page",
+    title: "Contact page",
     description: "Contact Description",
   };
 
