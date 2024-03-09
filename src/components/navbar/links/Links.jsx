@@ -5,33 +5,34 @@ import styles from './links.module.css'
 import NavLink from "./navLink/navLink";
 import { useState } from "react";
 import Image from "next/image";
+import { handleLogout } from "@/lib/actions";
+import { auth } from "@/lib/auth";
 
-const Links = () => {
+const links = [
+    {
+        title: "Homepage",
+        path: "/"
+    },
+    {
+        title: "About",
+        path: "/about"
+    },
+    {
+        title: "Contact",
+        path: "/contact"
+    },
+    {
+        title: "Blog",
+        path: "/blog"
+    }
+]
+
+const Links = ({session}) => {
 
     const [open, setOpen] = useState(false)
 
 
-    const links = [
-        {
-            title: "Homepage",
-            path: "/"
-        },
-        {
-            title: "About",
-            path: "/about"
-        },
-        {
-            title: "Contact",
-            path: "/contact"
-        },
-        {
-            title: "Blog",
-            path: "/blog"
-        }
-    ]
-
     // TEMPORARY
-    const session = true
     const isAdmin = true
 
     return (
@@ -44,10 +45,12 @@ const Links = () => {
                     <NavLink item={link} key={link.title} />
                 ))}
 
-                {session ? (
+                {session?.user ? (
                     <>
-                        {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-                        <button className={styles.logout}>Logout</button>
+                        {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+                        <form action={handleLogout}>
+                            <button className={styles.logout}>Logout</button>
+                        </form>
                     </>
                 ) :
                     (
@@ -57,13 +60,13 @@ const Links = () => {
             </div>
 
             {/* Mobile Menu */}
-            <Image 
-            src="/menu.png"
-            alt=""
-            width={30}
-            height={30}
-            onClick={()=>setOpen((prev)=>!prev)}
-            className={styles.menuButton}
+            <Image
+                src="/menu.png"
+                alt=""
+                width={30}
+                height={30}
+                onClick={() => setOpen((prev) => !prev)}
+                className={styles.menuButton}
             />
             {open && (
                 <div className={styles.mobileLinks}>
